@@ -1,14 +1,24 @@
 <?php
 
+use App\Http\Controllers\PaymentController;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\View;
-// use App\Http\Controllers\IndexController; 
-use App\Http\Controllers\HelloController;
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
+|
+*/
 
-// Route::get('/', [IndexController::class, 'home']); 
+Route::get('/', function () {
+    return view('index');
+});
 
-// Route::get('/',function(){
-//     return 'Morning Guys';
-// });
 
-Route::get('hello/{name}/{age}',[HelloController::class,'hello']);
+
+Route::get('/payments', [PaymentController::class, 'index'])->name('payments.index');
+Route::get('/payments/create', [PaymentController::class, 'create'])->name('payments.create');
+Route::post('/payments', [PaymentController::class, 'store'])->name('payments.store');
