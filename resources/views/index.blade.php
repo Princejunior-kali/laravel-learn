@@ -14,7 +14,7 @@
                 <div class="row justify-content-center">
                     <div class="col-auto">
                         <a href="{{ route('payments.index') }}" class="btn btn-light btn-lg me-3">
-                            <i class="fas fa-list me-2"></i>View Payments to commit 
+                            <i class="fas fa-list me-2"></i>View Payments 
                         </a>
                         <a href="{{ route('payments.create') }}" class="btn btn-outline-light btn-lg">
                             <i class="fas fa-plus me-2"></i>New Payment
